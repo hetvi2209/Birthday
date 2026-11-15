@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY BIRTHDAY, Dr.Neel ! 👑</title>
+  <meta name="description" content="Official Birthday Surprise & Roast for Dr. Neel - The Ultimate Best Friend Celebration">
+  
+  <!-- Premium Fonts: Cinzel (Luxury Serif / Poster), Montserrat (Bold Modern Sans), Space Grotesk (Tech/Dossier vibe) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Audio Element for Birthday Song -->
+  <audio id="bg-music" src="birthday-song.mp3" preload="auto" loop></audio>
+
+  <!-- Background Interactive Confetti & Particles Canvas -->
+  <canvas id="gold-canvas"></canvas>
+
+  <!-- Luxury Top Utility Bar -->
+  <header class="top-bar">
+    <div class="top-bar-container">
+      <div class="vip-tag">
+        <span class="vip-icon">👑</span>
+        <span class="vip-text">DR. NEEL | VIP BIRTHDAY EDITION</span>
+      </div>
+      <div class="top-actions">
+        
+        <!-- Music Player Controller -->
+        <div class="music-player-wrap">
+          <button id="music-toggle-btn" class="utility-btn utility-btn-music" title="Play / Pause Birthday Song">
+            <span class="equalizer" id="music-equalizer">
+              <span class="eq-bar bar-1"></span>
+              <span class="eq-bar bar-2"></span>
+              <span class="eq-bar bar-3"></span>
+              <span class="eq-bar bar-4"></span>
+            </span>
+            <span id="music-label" class="btn-text">MUSIC: PLAY</span>
+          </button>
+
+          <!-- Volume slider (desktop) -->
+          <div class="volume-slider-wrap" title="Music Volume">
+            <span class="vol-icon">🔉</span>
+            <input type="range" id="music-volume" min="0" max="1" step="0.05" value="0.75" class="gold-range">
+          </div>
+
+          <!-- Custom Song Upload -->
+          <label for="custom-audio-file" class="utility-btn utility-btn-upload" title="Upload your own song/MP3 for Dr. Neel">
+            <span>🎵</span>
+            <span class="btn-text">CUSTOM SONG</span>
+          </label>
+          <input type="file" id="custom-audio-file" accept="audio/*" style="display:none">
+        </div>
+
+        <!-- SFX Toggle -->
+        <button id="sfx-toggle" class="utility-btn" title="Toggle Sound Effects">
+          <span id="sfx-icon">🔊</span>
+          <span class="btn-text">SFX: ON</span>
+        </button>
+
+        <!-- Confetti Burst -->
+        <button id="confetti-burst-btn" class="utility-btn utility-btn-gold" title="Trigger Golden Confetti">
+          <span>✨</span>
+          <span class="btn-text">GOLD CONFETTI</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Music Prompt Banner (Encourages first click) -->
+  <aside id="music-prompt" class="music-prompt-banner">
+    <span class="prompt-icon">🎵</span>
+    <span class="prompt-text" id="prompt-text">Click anywhere to play Dr. Neel's Birthday Song!</span>
+    <button id="close-prompt-btn" class="prompt-close" aria-label="Dismiss">&times;</button>
+  </aside>
+
+  <!-- MAIN WRAPPER: Single Page Experience -->
+  <main class="page-container">
+
+    <!-- ==============================================
+         SECTION 1: MAIN BIRTHDAY SECTION
+         ============================================== -->
+    <section class="section hero-section" id="hero">
+      <div class="hero-card">
+        
+        <!-- Luxury Badge Header -->
+        <div class="gold-pill-badge">
+          <span class="sparkle">✦</span>
+          <span class="theme-title">HAPPY BIRTHDAY, Dr.Neel !</span>
+          <span class="sparkle">✦</span>
+        </div>
+
+        <!-- Big Bold Heading -->
+        <h1 class="main-title">
+          HAPPY BIRTHDAY,<br>
+          <span class="gold-gradient-text">My Favourite Headache!</span> 😂
+        </h1>
+
+        <!-- Subheading -->
+        <p class="main-subtitle">
+          Congratulations on surviving another year of being <span class="highlight-text">absolutely unbearable</span>.
+        </p>
+
+        <!-- Now Playing Track Chip -->
+        <div class="now-playing-chip" id="now-playing-chip">
+          <span class="np-disc">💿</span>
+          <span class="np-title" id="now-playing-title">Track: Birthday Anthem (VIP Edition)</span>
+        </div>
+
+        <!-- Decorative Divider -->
+        <div class="gold-divider">
+          <span class="divider-line"></span>
+          <span class="divider-diamond">◆</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <!-- Stylish Birthday Cake Illustration -->
+        <div class="cake-showcase">
+          <div class="cake-wrapper" id="cake-wrapper">
+            <!-- Custom Luxury Geometric/Art-Deco SVG Cake -->
+            <svg class="luxury-cake-svg" viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#dfb76c"/>
+                  <stop offset="50%" stop-color="#fef4cc"/>
+                  <stop offset="100%" stop-color="#9d7328"/>
+                </linearGradient>
+                <linearGradient id="charcoalDark" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1f242d"/>
+                  <stop offset="100%" stop-color="#101217"/>
+                </linearGradient>
+                <linearGradient id="charcoalMid" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#2a303c"/>
+                  <stop offset="100%" stop-color="#171a21"/>
+                </linearGradient>
+                <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#b38728"/>
+                  <stop offset="50%" stop-color="#fae89c"/>
+                  <stop offset="100%" stop-color="#9d7328"/>
+                </linearGradient>
+                <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#ff4500"/>
+                  <stop offset="50%" stop-color="#ffb700"/>
+                  <stop offset="100%" stop-color="#fff8d6"/>
+                </linearGradient>
+                <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+                <filter id="flameGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+
+              <!-- Cake Pedestal / Stand -->
+              <ellipse cx="180" cy="255" rx="145" ry="16" fill="url(#goldPlate)" filter="url(#goldGlow)"/>
+              <ellipse cx="180" cy="253" rx="140" ry="13" fill="#13161c"/>
+              <ellipse cx="180" cy="250" rx="130" ry="9" fill="url(#goldPlate)"/>
+              
+              <!-- Bottom Tier (Tier 1) -->
+              <path d="M 65 240 L 65 185 Q 180 200 295 185 L 295 240 Q 180 258 65 240 Z" fill="url(#charcoalDark)"/>
+              <ellipse cx="180" cy="185" rx="115" ry="16" fill="url(#charcoalMid)" stroke="url(#goldAccent)" stroke-width="2"/>
+              <path d="M 67 215 Q 180 230 293 215" stroke="url(#goldAccent)" stroke-width="3" fill="none" stroke-dasharray="8 4"/>
+              
+              <!-- Middle Tier (Tier 2) -->
+              <path d="M 95 185 L 95 130 Q 180 144 265 130 L 265 185 Q 180 198 95 185 Z" fill="url(#charcoalDark)"/>
+              <ellipse cx="180" cy="130" rx="85" ry="14" fill="url(#charcoalMid)" stroke="url(#goldAccent)" stroke-width="2"/>
+              <path d="M 97 158 Q 180 172 263 158" stroke="url(#goldAccent)" stroke-width="2.5" fill="none"/>
+              <circle cx="180" cy="165" r="4" fill="url(#goldPlate)"/>
+              <circle cx="140" cy="163" r="3" fill="url(#goldPlate)"/>
+              <circle cx="220" cy="163" r="3" fill="url(#goldPlate)"/>
+
+              <!-- Top Tier (Tier 3) -->
+              <path d="M 125 130 L 125 85 Q 180 97 235 85 L 235 130 Q 180 142 125 130 Z" fill="url(#charcoalDark)"/>
+              <ellipse cx="180" cy="85" rx="55" ry="11" fill="url(#charcoalMid)" stroke="url(#goldAccent)" stroke-width="2.5"/>
+              <text x="180" y="112" font-family="'Cinzel', serif" font-size="12" font-weight="800" fill="url(#goldPlate)" text-anchor="middle" letter-spacing="2">DR.Neel</text>
+
+              <!-- Luxury Gold Candles (3 Candles) -->
+              <!-- Left Candle -->
+              <g class="candle" id="candle-1">
+                <rect x="148" y="52" width="6" height="34" rx="2" fill="url(#goldPlate)"/>
+                <line x1="151" y1="52" x2="151" y2="44" stroke="#e0e0e0" stroke-width="1.5"/>
+                <path class="flame" d="M 151 44 C 147 38 147 30 151 22 C 155 30 155 38 151 44 Z" fill="url(#flameGrad)" filter="url(#flameGlow)"/>
+                <path class="smoke" d="M 151 40 Q 146 32 153 25 Q 148 18 152 10" stroke="#aaa" stroke-width="2" fill="none" opacity="0"/>
+              </g>
+
+              <!-- Center Tall Candle -->
+              <g class="candle" id="candle-2">
+                <rect x="177" y="44" width="6" height="42" rx="2" fill="url(#goldPlate)"/>
+                <line x1="180" y1="44" x2="180" y2="35" stroke="#e0e0e0" stroke-width="1.5"/>
+                <path class="flame flame-center" d="M 180 35 C 175 28 175 19 180 10 C 185 19 185 28 180 35 Z" fill="url(#flameGrad)" filter="url(#flameGlow)"/>
+                <path class="smoke" d="M 180 32 Q 175 22 182 14 Q 177 6 181 0" stroke="#aaa" stroke-width="2" fill="none" opacity="0"/>
+              </g>
+
+              <!-- Right Candle -->
+              <g class="candle" id="candle-3">
+                <rect x="206" y="52" width="6" height="34" rx="2" fill="url(#goldPlate)"/>
+                <line x1="209" y1="52" x2="209" y2="44" stroke="#e0e0e0" stroke-width="1.5"/>
+                <path class="flame" d="M 209 44 C 205 38 205 30 209 22 C 213 30 213 38 209 44 Z" fill="url(#flameGrad)" filter="url(#flameGlow)"/>
+                <path class="smoke" d="M 209 40 Q 204 32 211 25 Q 206 18 210 10" stroke="#aaa" stroke-width="2" fill="none" opacity="0"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Interactive Candle Blow Action -->
+          <div class="cake-controls">
+            <button id="blow-candles-btn" class="action-btn action-btn-secondary">
+              <span class="btn-icon">💨</span>
+              <span class="btn-text" id="blow-btn-text">BLOW CANDLES & MAKE A WISH</span>
+            </button>
+            <span class="sub-hint" id="cake-hint">Click to blow out Dr. Neel's birthday candles</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 2: THE OFFICIAL ROAST 😂
+         ============================================== -->
+    <section class="section roast-section" id="roast">
+      <div class="section-header">
+        <span class="section-tag">OFFICIAL DIAGNOSTIC REPORT</span>
+        <h2 class="section-title">
+          A FEW THINGS ABOUT THIS SPECIMEN 😂
+        </h2>
+        <p class="section-subtitle">
+          Clinical observations, behavioral anomalies, and daily psychiatric evidence.
+        </p>
+      </div>
+
+      <!-- 7 Roast Cards Grid -->
+      <div class="roast-grid">
+        
+        <!-- Card 1: Attitude -->
+        <div class="roast-card">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">😎</div>
+            <span class="card-badge">STATUS: ALWAYS ACTIVE</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Attitude</h3>
+            <p class="roast-statement">Unlimited subscription.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Bandwidth:</span>
+              <span class="meter-value">24/7 Unlimited 4K</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Brain -->
+        <div class="roast-card">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">🧠</div>
+            <span class="card-badge badge-warning">ERR_404_OFFLINE</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Brain</h3>
+            <p class="roast-statement">Sometimes under maintenance.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Server Uptime:</span>
+              <span class="meter-value">Sporadic / Rebooting ⚙️</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-maintenance"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Intelligence -->
+        <div class="roast-card">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">⏳</div>
+            <span class="card-badge badge-loading">BUFFERING: 99%</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Intelligence</h3>
+            <p class="roast-statement">Loading... please wait.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Estimated Wait:</span>
+              <span class="meter-value">3 - 5 Business Decades</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-loading"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Drama -->
+        <div class="roast-card">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">🎬</div>
+            <span class="card-badge">OSCAR NOMINEE</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Drama</h3>
+            <p class="roast-statement">Netflix should hire you.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Theatricality:</span>
+              <span class="meter-value">12 / 10 Max Volume</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-max"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Maturity -->
+        <div class="roast-card">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">🚧</div>
+            <span class="card-badge badge-construction">SITE UNDER WORK</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Maturity</h3>
+            <p class="roast-statement">Still under construction.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Completion Date:</span>
+              <span class="meter-value">Never / Stalled</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-under-construction"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Annoying level -->
+        <div class="roast-card">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">⚡</div>
+            <span class="card-badge badge-danger">HAZARD LEVEL: CRITICAL</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Annoying level</h3>
+            <p class="roast-statement">International standard.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Certification:</span>
+              <span class="meter-value">ISO-9001 Menace Grade</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-danger"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: Friendship level (Highlight Card) -->
+        <div class="roast-card roast-card-highlight">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon-wrap">💎</div>
+            <span class="card-badge badge-gold">UNBREAKABLE TIER</span>
+          </div>
+          <div class="card-body">
+            <h3 class="roast-label">Friendship level</h3>
+            <p class="roast-statement">Unfortunately irreplaceable.</p>
+          </div>
+          <div class="card-meter">
+            <div class="meter-info">
+              <span>Binding Agreement:</span>
+              <span class="meter-value">Lifetime & Non-Revocable</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill fill-gold"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 3: HIS SPECIAL AWARD 🏆
+         ============================================== -->
+    <section class="section award-section" id="award">
+      <div class="section-header">
+        <span class="section-tag">HIGHEST CIVIC DISTINCTION</span>
+        <h2 class="section-title">
+          HIS SPECIAL AWARD 🏆
+        </h2>
+        <p class="section-subtitle">
+          An honor forged in patience, certified by mutual suffering, and awarded with utmost sarcasm.
+        </p>
+      </div>
+
+      <!-- Luxury Certificate Frame -->
+      <div class="certificate-container" id="printable-certificate">
+        <div class="cert-outer-border">
+          <div class="cert-inner-border">
+            
+            <!-- Corner Accents -->
+            <div class="corner-bracket top-left"></div>
+            <div class="corner-bracket top-right"></div>
+            <div class="corner-bracket bottom-left"></div>
+            <div class="corner-bracket bottom-right"></div>
+
+            <!-- Certificate Header -->
+            <div class="cert-head">
+              <div class="cert-crest">
+                <span class="crest-icon">🏆</span>
+              </div>
+              <span class="cert-pretitle">OFFICIAL BOARD OF CHRONIC HEADACHES</span>
+              <h3 class="cert-main-title">
+                OFFICIALLY CERTIFIED AS THE MOST ANNOYING HUMAN OF THE YEAR
+              </h3>
+              <p class="cert-recipient-intro">This prestigious distinction is hereby bestowed upon:</p>
+              <div class="cert-name-plate">
+                <span class="cert-recipient">DR. NEEL</span>
+              </div>
+            </div>
+
+            <!-- Certificate Body: Awarded For -->
+            <div class="cert-body">
+              <h4 class="cert-awarded-heading">AWARDED FOR:</h4>
+              <ul class="cert-reasons-list">
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <span class="reason-text">Talking nonsense confidently.</span>
+                </li>
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <span class="reason-text">Ragebaiting people professionally.</span>
+                </li>
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <span class="reason-text">Having an answer for everything.</span>
+                </li>
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <span class="reason-text">Being impossible to replace despite all the nonsense.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Certificate Footer & Stamp -->
+            <div class="cert-footer">
+              <div class="cert-sign-col">
+                <div class="signature-line">
+                  <span class="handwritten-signature">Your Only Sane Best Friend</span>
+                </div>
+                <span class="sign-label">VERIFIED WITNESS & SURVIVOR</span>
+              </div>
+
+              <!-- Official Gold Foil Stamp -->
+              <div class="cert-seal-wrap">
+                <div class="gold-wax-seal">
+                  <span class="seal-ring-text">★ VERIFIED MENACE ★</span>
+                  <span class="seal-icon">👑</span>
+                  <span class="seal-sub">AUTHENTIC</span>
+                </div>
+              </div>
+
+              <div class="cert-sign-col cert-date-col">
+                <div class="signature-line">
+                  <span class="date-text">TODAY & FOREVER</span>
+                </div>
+                <span class="sign-label">VALIDITY: NON-REFUNDABLE</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Action Buttons -->
+      <div class="cert-actions">
+        <button id="print-cert-btn" class="action-btn action-btn-secondary">
+          <span class="btn-icon">📜</span>
+          <span class="btn-text">PRINT / SAVE CERTIFICATE</span>
+        </button>
+        <button id="copy-citation-btn" class="action-btn action-btn-secondary">
+          <span class="btn-icon">📋</span>
+          <span class="btn-text" id="copy-btn-text">COPY CITATION</span>
+        </button>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 4: A LITTLE APPRECIATION 🤝
+         ============================================== -->
+    <section class="section appreciation-section" id="appreciation">
+      <div class="section-header">
+        <span class="section-tag">UNFILTERED REAL TALK</span>
+        <h2 class="section-title">
+          JOKES APART...
+        </h2>
+        <p class="section-subtitle">
+          Dropping the roasting shield for exactly 60 seconds.
+        </p>
+      </div>
+
+      <div class="appreciation-letter-card">
+        <div class="letter-quote-mark">“</div>
+        
+        <div class="letter-content">
+          <p class="letter-text">
+            Behind all the roasting and unlimited leg-pulling, you're genuinely one of the best people to have around. Thanks for all the laughs, stupid conversations , unforgettable memories and making me laugh whenever i cry by roasting. Stay happy, keep achieving great things and never change (okay, maybe change a little.......and jaadyaaa gym jaooo) and main thinggg don't overthink a lot jaadyaa(i know to be karso j ghani vaar) and ragebait karvanu ochuu karoo maneeeee. Wishing you the best year ahead!
+          </p>
+        </div>
+
+        <!-- Gujarati Banter Highlights -->
+        <div class="gujarati-pills">
+          <div class="g-pill">
+            <span class="g-pill-emoji">🏋️‍♂️</span>
+            <span class="g-pill-text">jaadyaaa gym jaooo</span>
+          </div>
+          <div class="g-pill">
+            <span class="g-pill-emoji">🧠</span>
+            <span class="g-pill-text">don't overthink a lot jaadyaa</span>
+          </div>
+          <div class="g-pill">
+            <span class="g-pill-emoji">😤</span>
+            <span class="g-pill-text">ragebait karvanu ochuu karoo maneeeee</span>
+          </div>
+        </div>
+
+        <div class="letter-signature-block">
+          <span class="signed-as">Cheers to brotherhood, endless laughter & sanity loss,</span>
+          <span class="signed-author">— Your Best Friend 🥂</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 5: FINAL BIRTHDAY SURPRISE 🎁
+         ============================================== -->
+    <section class="section final-section" id="final-surprise">
+      <div class="final-banner-card">
+        
+        <div class="final-tagline-wrap">
+          <span class="final-sub">THE ULTIMATE BIRTHDAY VERDICT</span>
+          <h2 class="final-punchline">
+            ONE MORE YEAR OLDER.<br>
+            <span class="gold-gradient-text">NOT A SINGLE YEAR WISER.</span> 😂
+          </h2>
+          <p class="final-desc">
+            You survived the roasts, the diagnostics, and the certificate. Ready for what you actually deserve?
+          </p>
+        </div>
+
+        <!-- Primary CTA Button -->
+        <div class="final-cta-wrap">
+          <button id="final-gift-btn" class="gold-pulse-btn">
+            <span class="btn-shine"></span>
+            <span class="btn-icon">🎁</span>
+            <span class="btn-text">CLICK FOR YOUR FINAL GIFT</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Note -->
+    <footer class="luxury-footer">
+      <p class="footer-copy">
+        Crafted exclusively with love & roasting for <strong>Dr. Neel</strong> • Lifetime Friendship Edition 👑
+      </p>
+    </footer>
+
+  </main>
+
+
+  <!-- ==============================================
+       FINAL GIFT MODAL POPUP 🥂
+       ============================================== -->
+  <div class="modal-overlay" id="gift-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    
+    <div class="modal-window">
+      <!-- Luxury Window Trim -->
+      <div class="modal-corner top-left"></div>
+      <div class="modal-corner top-right"></div>
+      <div class="modal-corner bottom-left"></div>
+      <div class="modal-corner bottom-right"></div>
+
+      <!-- Close Button -->
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Surprise Modal">&times;</button>
+
+      <!-- Modal Content -->
+      <div class="modal-inner">
+        
+        <div class="modal-badge">
+          <span>👑 SPECIAL DELIVERY FOR DR. NEEL</span>
+        </div>
+
+        <div class="modal-champagne-icon">🥂</div>
+
+        <h3 class="modal-heading">
+          CONGRATULATIONS, CHAMP!
+        </h3>
+
+        <!-- Exact Prompt Gift Message -->
+        <div class="gift-message-box">
+          <p class="gift-message-text">
+            "Your gift is my friendship and endless love. Unfortunately, no refunds, no exchanges and lifetime validity. HAPPY BIRTHDAY, Jaadyaaa! 🥂"
+          </p>
+        </div>
+
+        <!-- Funny Terms & Conditions Invoice -->
+        <div class="terms-receipt">
+          <div class="receipt-header">
+            <span>OFFICIAL TRANSACTION RECEIPT</span>
+            <span>ORDER #NEEL-HBD-2026</span>
+          </div>
+          <div class="receipt-row">
+            <span>Item:</span>
+            <strong>1x Unconditional Friendship & Banter</strong>
+          </div>
+          <div class="receipt-row">
+            <span>Cost:</span>
+            <strong>Priceless ($0.00 / Zero Returns)</strong>
+          </div>
+          <div class="receipt-row">
+            <span>Refund Policy:</span>
+            <strong class="receipt-alert">STRICTLY FORBIDDEN</strong>
+          </div>
+          <div class="receipt-row">
+            <span>Expiry Date:</span>
+            <strong>Lifetime Validity Guaranteed</strong>
+          </div>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-actions">
+          <button id="modal-confetti-btn" class="action-btn action-btn-gold">
+            <span class="btn-icon">🎉</span>
+            <span class="btn-text">CELEBRATE MORE!</span>
+          </button>
+          <button id="modal-accept-btn" class="action-btn action-btn-secondary">
+            <span class="btn-text">ACCEPT MY FATE 🤝</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
